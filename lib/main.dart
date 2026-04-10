@@ -8,17 +8,7 @@ import 'package:Temple_App/services/auth_service.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 await Firebase.initializeApp();
-  // await Firebase.initializeApp(
-  //   options: const FirebaseOptions(
-  //     apiKey: "AIzaSyB317vWVkq4wARb5kZ2_EW_L8P5ukrDn9k",
-  //     authDomain: "hotel-46ffd.firebaseapp.com",
-  //     projectId: "hotel-46ffd",
-  //     storageBucket: "hotel-46ffd.firebasestorage.app",
-  //     messagingSenderId: "1044975682056",
-  //     appId: "1:1044975682056:web:6da51e0ee248c1e34147bd",
-  //     measurementId: "G-KM78D4FP7D",
-  //   ),
-  // );
+
 
   runApp(MyApp());
 }
