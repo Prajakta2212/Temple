@@ -45,7 +45,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
 
-          // 🏛 TEMPLE (FULL BOTTOM)
+        
           Positioned(
             bottom: 0,
             left: 0,
@@ -53,7 +53,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: Image.asset(
               "assets/temple_bg.png",
               height: screenHeight * 0.70,
-                 fit: BoxFit.cover, // 🔥 fills full width
+                 fit: BoxFit.cover,
     alignment: Alignment.topCenter,
             ),
           ),
@@ -132,7 +132,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
 
-          // ⚫ DOTS
         
         ],
       ),
