@@ -28,9 +28,9 @@ class AuthInitial extends AuthState {}
 
 class AuthLoading extends AuthState {}
 
-class LoginSuccess extends AuthState {}     // ✅ login only
+class LoginSuccess extends AuthState {}    
 
-class SignupSuccess extends AuthState {}    // ✅ signup only
+class SignupSuccess extends AuthState {}   
 
 class AuthError extends AuthState {
   final String message;
