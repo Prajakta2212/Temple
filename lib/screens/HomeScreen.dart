@@ -14,66 +14,50 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: const Color(0xFFF7F7F7),
 
      
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
+     appBar: AppBar(
         elevation: 0,
-        leading: const Padding(
-          padding: EdgeInsets.only(left: 12),
-          child: Icon(Icons.account_circle_outlined, size: 28),
-        ),
-    actions: [
-  Padding(
-    padding: const EdgeInsets.only(right: 12),
-    child: GestureDetector(
-      onTap: () async {
-        final prefs = await SharedPreferences.getInstance();
-        await prefs.setBool("isLoggedIn", false);
-        await prefs.remove("username");
-
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (_) => LoginScreen()),
-          (route) => false,
-        );
-      },
-      child: Row(
-        children: const [
-          Icon(Icons.logout, size: 20, color: Colors.orange),
-          SizedBox(width: 4),
-          Text(
-            "Logout",
-            style: TextStyle(
-              fontSize: 18,
-              color: Colors.orange,
-              fontWeight: FontWeight.w500,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.orange, Colors.deepOrange],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
+        ),
+        title: const Text(
+          "Temple App",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () async {
+              final prefs = await SharedPreferences.getInstance();
+              await prefs.setBool("isLoggedIn", false);
+
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (_) => LoginScreen()),
+                (route) => false,
+              );
+            },
+          )
         ],
       ),
-    ),
-  ),
-],
-  
-  
-      ),
+
+
 body: SingleChildScrollView(
   padding: const EdgeInsets.symmetric(horizontal: 16),
   child: Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
 
-      // ❤️ Subtitle
-      // Text(
-      //   "Mumbai’s Sacred Heart",
-      //   style: GoogleFonts.manrope(
-      //     color: Colors.orange,
-      //     fontSize: 12,
-      //   ),
-      // ),
+    
 
       const SizedBox(height: 10),
 
-      // 📝 Divine Image (Responsive)
+    
       Center(
         child: Image.asset(
           "assets/divine.png",
@@ -84,7 +68,7 @@ body: SingleChildScrollView(
 
       const SizedBox(height: 20),
 
-      // 🔶 Scanner Banner
+   
       ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.asset(
@@ -96,12 +80,12 @@ body: SingleChildScrollView(
 
       const SizedBox(height: 25),
 
-      // 🧩 SERVICES TITLE
+  
    
 
       const SizedBox(height: 16),
 
-      // 🧩 Services Image (Grid UI)
+  
       Image.asset(
         "assets/services.png",
         width: double.infinity,
@@ -110,12 +94,12 @@ body: SingleChildScrollView(
 
       const SizedBox(height: 30),
 
-      // 🎥 LIVE SECTION
+   
      
 
       const SizedBox(height: 12),
 
-      // 🎥 Live Image
+ 
       ClipRRect(
         borderRadius: BorderRadius.circular(16),
         child: Image.asset(
@@ -148,7 +132,7 @@ body: SingleChildScrollView(
     );
   }
 
-  // 🔘 SERVICE ITEM
+
   Widget _serviceItem(String icon, String label) {
     return Column(
       children: [
@@ -167,7 +151,7 @@ body: SingleChildScrollView(
     );
   }
 
-  // 🎥 LIVE CARD
+ 
   Widget _liveCard(String image) {
     return Container(
       width: 160,
@@ -182,3 +166,4 @@ body: SingleChildScrollView(
     );
   }
 }
+
